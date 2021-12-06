@@ -17,7 +17,7 @@ sumDigits res
 
 superDigit :: Integer -> Integer  -> Int  
 superDigit n k =
-    let stringDigit = show n
+    let stringDigit = show n                                                            // Bad happends here --- it creates a huge replica
         replicateAndSumDigit1sRes =  foldr (\chac acc -> acc+ digitToInt chac) 0 $ join $ replicate (fromIntegral k) stringDigit
       in sumDigits replicateAndSumDigit1sRes
 
